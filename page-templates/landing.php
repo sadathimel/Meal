@@ -1,3 +1,7 @@
+/**
+ * Template Name: landing
+ */
+
 <?php get_header(); ?>
 
     <div class="main-wrap " id="section-home">
