@@ -21,8 +21,8 @@ function meal_section_picker_metabox($metaboxes){
         'priority'  => 'default',
         'sections'  => array(
             array(
+                'name' => '',
                 'id'     => 'meal-page-sections-section-one',
-                'name'  => '',
                 'icon'   => 'fa fa-image',
                 'fields' => array(
                     array(
