@@ -1,4 +1,13 @@
 <?php
+require_once get_theme_file_path( "/lib/csf/cs-framework.php" );
+require_once get_theme_file_path( "/inc/metaboxes/section.php" );
+require_once get_theme_file_path( "/inc/metaboxes/page.php" );
+
+define('CS_ACTIVE_FRAMEWORK', true);
+define('CS_ACTIVE_METABOX', true);
+define('CS_ACTIVE_TAXONOMY', true);
+define('CS_ACTIVE_SHORTCODE', true);
+define('CS_ACTIVE_CUSTOMIZE', true);
 
 function meal_theme_setup() {
     load_theme_textdomain( 'meal', get_temp_dir() . '/languages' );
@@ -45,3 +54,9 @@ function meal_assets() {
 
 }
 add_action( 'wp_enqueue_scripts', 'meal_assets' );
+
+
+function meal_codestar_init(){
+    CSFramework_Metabox::instance(array());
+}
+add_action( 'ini', 'meal_codestar_init' );
