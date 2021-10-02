@@ -10,7 +10,6 @@ function meal_section_type_metabox( $metaboxes ) {
         'sections'  => [
             [
                 'name'     => 'meal-section-type-section-one',
-                'name'   => '',
                 'icon'   => 'fa fa-image',
                 'fields' => [
                     [
