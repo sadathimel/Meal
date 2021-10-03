@@ -55,7 +55,7 @@ class CSFramework_Option_group extends CSFramework_Options {
 
           $title = ( isset( $this->value[$key][$field_id] ) ) ? $this->value[$key][$field_id] : '';
 
-          if($field_id=='section' || $field_id == 'recipe' || $field_id == 'portfolio'){
+          if($field_id=='section' || $field_id == 'recipe' || $field_id == 'portfolio' || $field_id == 'chef'){
             $title = get_the_title( $this->value[$key][$field_id] );
           }
 
