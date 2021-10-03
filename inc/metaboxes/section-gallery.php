@@ -34,6 +34,11 @@ function meal_gallery_section_metabox( $metaboxes ) {
                         'accordion_title' => __('Add New Image','meal'),
                         'fields' => [
                             [
+                                'id'    => 'title',
+                                'title' => __( 'Title', 'meal' ),
+                                'type'  => 'text',
+                            ],
+                            [
                                 'id'    => 'gallery_image',
                                 'title' => __( 'gallery image', 'meal' ),
                                 'type'  => 'image',
