@@ -38,12 +38,6 @@
         ?>
         
 
-        
-
-        
-
-        
-
         <div class="section bg-light" data-aos="fade-up" id="section-reservation">
             <div class="container">
                 <div class="row section-heading justify-content-center mb-5">

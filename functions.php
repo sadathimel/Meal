@@ -2,6 +2,7 @@
 require_once get_theme_file_path( "/lib/csf/cs-framework.php" );
 require_once get_theme_file_path( "/inc/metaboxes/section.php" );
 require_once get_theme_file_path( "/inc/metaboxes/page.php" );
+require_once get_theme_file_path( "/inc/metaboxes/recipe.php" );
 require_once get_theme_file_path( "/inc/metaboxes/section-banner.php" );
 require_once get_theme_file_path( "/inc/metaboxes/section-featured.php" );
 require_once get_theme_file_path( "/inc/metaboxes/section-gallery.php" );
@@ -19,7 +20,7 @@ function meal_theme_setup() {
     load_theme_textdomain( 'meal', get_temp_dir() . '/languages' );
     add_theme_support( 'post-thumbnails' );
     add_theme_support( 'title-tag' );
-    add_theme_support( 'custum-logo' );
+    add_theme_support( 'custom-logo' );
     add_theme_support( 'automatic-feed-links' );
     add_theme_support( 'html5', [ 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ] );
 }
