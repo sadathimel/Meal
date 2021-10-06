@@ -2,7 +2,7 @@
 
 function meal_featured_category( $metaboxes ) {
     $metaboxes[] = [
-        'id'       => 'meal-tax-featured',
+        'id'       => '',
         'taxonomy' => 'category',
         'fields'   => [
             [
