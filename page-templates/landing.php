@@ -36,6 +36,11 @@
             $section_id = 910;
             get_template_part("section-template/services"); 
         ?>
+        
+        <?php 
+            $section_id = 915;
+            get_template_part("section-template/reservation"); 
+        ?>
 
        
 

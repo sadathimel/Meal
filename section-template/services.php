@@ -10,9 +10,12 @@
         <div class="row section-heading justify-content-center mb-5">
             <div class="col-md-8 text-center">
                 <h2 class="heading mb-3">
-                    <?php esc_html($meal_section_title); ?>
+                    <?php echo esc_html( $meal_section_title )?>
                 </h2>
-                <?php apply_filters( 'the_content', $meal_section_description ) ?>
+                
+                <?php 
+                    echo apply_filters( 'the_content', $meal_section_description );      
+                ?>
             </div>
         </div>
 

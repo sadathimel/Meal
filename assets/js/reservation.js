@@ -1,5 +1,15 @@
 ;(function($){
     $(document).ready(function(){
-        
+        $.post(mealurl.ajaxurl),{
+            action:'reservation',
+            name:$("#name").val(),
+            email:$("#email").val(),
+            phone:$("#phone").val(),
+            persons:$("#persons").val(),
+            date:$("#date").val(),
+            time:$("#name").val(),
+        },function(data){
+            console.log(data);
+        }
     });
 })(jQuery);
