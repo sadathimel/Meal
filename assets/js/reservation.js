@@ -8,7 +8,8 @@
                 phone:$("#phone").val(),
                 persons:$("#persons").val(),
                 date:$("#date").val(),
-                time:$("#name").val(),
+                time:$("#time").val(),
+                rn:$("#rn").val()
             },function(data){
                 console.log(data);
             });

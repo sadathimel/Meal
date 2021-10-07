@@ -47,11 +47,11 @@
                             <div class="form-field-icon-wrap">
                                 <span class="icon ion-android-arrow-dropdown"></span>
                                 <select name="persons" id="persons" class="form-control">
-                                    <option value="">1 person</option>
-                                    <option value="">2 persons</option>
-                                    <option value="">3 persons</option>
-                                    <option value="">4 persons</option>
-                                    <option value="">5+ persons</option>
+                                    <option value="1">1 person</option>
+                                    <option value="2">2 persons</option>
+                                    <option value="3">3 persons</option>
+                                    <option value="4">4 persons</option>
+                                    <option value="5">5+ persons</option>
                                 </select>
                             </div>
                         </div>
