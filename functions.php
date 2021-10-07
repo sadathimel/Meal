@@ -109,6 +109,21 @@ function meal_process_reservation(){
             'time' => $time,
         );
         print_r($data);
+
+        $reservation_arguments = array(
+            'post_type' => 'reservation',
+            'post_author' => 1,
+            'post_date' => date('Y-m-d H:i:s'),
+            'post_status' => 'publish',
+            'post_title' => sprintf('%s - Reservation for %s persons on %s - %s', $name,$persons,$date." : ".$time,$email  ),
+            'meta_input' => $data
+        );
+        $wp_error = '';
+        wp_insert_post( $reservation_arguments, $wp_error );
+        if(!$wp_error){
+            echo "Successful";
+        }
+
     }else{
         echo 'Not allowed';
     }

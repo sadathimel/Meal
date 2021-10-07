@@ -11,7 +11,11 @@
                 time:$("#time").val(),
                 rn:$("#rn").val()
             },function(data){
-                console.log(data);
+               if('Successful' == data){
+                   alert('Your reservation request has been placed');
+               }else if('Duplicate' == data){
+                   alert('You have already placed a request for this reservation. No need to submit agin');
+               }
             });
             return false;
         });
