@@ -72,7 +72,7 @@
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-md-4">
-                            <input type="submit" class="btn btn-primary btn-outline-primary btn-block"
+                            <input type="submit" id="reservenow" class="btn btn-primary btn-outline-primary btn-block"
                                     value="Reserve Now">
                         </div>
                     </div>
