@@ -141,11 +141,12 @@ function meal_process_reservation() {
         } else {
             $wp_error = '';
             $reservation_id = wp_insert_post( $reservation_arguments, $wp_error );
+            $_name = explode(" ", $name);
             $oder_data = array(
                 'first_name' => $_name[0],
-                'last_name' => ,
-                'email' =>,
-                'phone' => ,
+                'last_name' => isset($_name[1]) ? $_name[1] : '',
+                'email' => $email,
+                'phone' => $phone,
             );
             if ( !$wp_error ) {
                 echo "Successful";
