@@ -148,6 +148,9 @@ function meal_process_reservation() {
                 'email' => $email,
                 'phone' => $phone,
             );
+            $order = wc_create_order();
+            $order-> set_address($order_data);
+            
             if ( !$wp_error ) {
                 echo "Successful";
             }
