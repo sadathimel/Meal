@@ -140,7 +140,13 @@ function meal_process_reservation() {
             echo 'Duplicate';
         } else {
             $wp_error = '';
-            wp_insert_post( $reservation_arguments, $wp_error );
+            $reservation_id = wp_insert_post( $reservation_arguments, $wp_error );
+            $oder_data = array(
+                'first_name' => $_name[0],
+                'last_name' => ,
+                'email' =>,
+                'phone' => ,
+            );
             if ( !$wp_error ) {
                 echo "Successful";
             }
@@ -154,3 +160,30 @@ function meal_process_reservation() {
 }
 add_action( 'wp_ajax_reservation', 'meal_process_reservation' );
 add_action( 'wp_ajax_nopriv_reservation', 'meal_process_reservation' );
+
+function meal_checkout_fields($fields){
+
+        unset($fields['billing_city']);
+        unset($fields['billing_company']);
+        unset($fields['billing_address_1']);
+        unset($fields['billing_address_2']);
+        unset($fields['billing_city']);
+        unset($fields['billing_postcode']);
+        unset($fields['billing_country']);
+        unset($fields['billing_state']);
+
+        unset($fields['shipping_city']);
+        unset($fields['shipping_first_name']);
+        unset($fields['shipping_last_name']);
+        unset($fields['shipping_company']);
+        unset($fields['shipping_address_1']);
+        unset($fields['shipping_address_2']);
+        unset($fields['shipping_postcode']);
+        unset($fields['shipping_country']);
+        unset($fields['shipping_state']);
+
+        unset($fields['order']['order_comments']);
+
+        return $fields;
+}
+add_filter('woocommerce_checkout_fields','meal_checkout_fields');
