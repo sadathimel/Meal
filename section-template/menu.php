@@ -1,7 +1,7 @@
 <?php
-    global $section_id;
+    global $meal_section_id;
    
-    $meal_section = get_post($section_id);
+    $meal_section = get_post($meal_section_id);
     $meal_section_title = $meal_section->post_title;
     $meal_section_description = $meal_section->post_content;
 ?>

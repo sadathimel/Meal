@@ -6,45 +6,17 @@
 
     <div class="main-wrap " id="section-home">
 
-        <?php 
-            $section_id = 884;
-            get_template_part("section-template/banner"); 
-        ?>
+    <?php
+        $meal_current_page_id = get_the_ID();
+        $meal_page_meta = get_post_meta($meal_current_page_id,'meal-page-sections',true);
+        foreach($meal_page_meta['sections'] as $meal_page_section):
+            $meal_section_id = $meal_page_section['section'];
+            $meal_section_meta = get_post_meta($meal_section_id,'meal-section-type',true);
+            $meal_section_type = $meal_section_meta['type'];
+            get_template_part( "section-template/{$meal_section_type}");
+        endforeach;
+    ?>
 
-        <?php 
-            $section_id = 878;
-            get_template_part("section-template/featured"); 
-        ?>
-
-        <?php 
-            $section_id = 880;
-            get_template_part("section-template/gallery"); 
-        ?>
-        
-        <?php 
-            $section_id = 906;
-            get_template_part("section-template/chef"); 
-        ?>
-
-        <?php 
-            $section_id = 911;
-            get_template_part("section-template/menu"); 
-        ?>
-
-        
-        <?php 
-            $section_id = 910;
-            get_template_part("section-template/services"); 
-        ?>
-        
-        <?php 
-            $section_id = 915;
-            get_template_part("section-template/reservation"); 
-        ?>
-
-       
-
-        
 
         <div class="section bg-white" data-aos="fade-up">
             <div class="container">
