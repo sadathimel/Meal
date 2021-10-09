@@ -16,11 +16,11 @@ define( 'CS_ACTIVE_TAXONOMY', true );
 define( 'CS_ACTIVE_SHORTCODE', true );
 define( 'CS_ACTIVE_CUSTOMIZE', true );
 
-if ( site_url() == "http://127.0.0.1/wp/" ) {
-    define( "VERSION", time() );
-} else {
-    define( "VERSION", wp_get_theme()->get( "version" ) );
-}
+// if ( site_url() == "http://127.0.0.1/wp/landing-page" ) {
+//     define( "time()", time() );
+// } else {
+//     define( "time()", wp_get_theme()->get( "time()" ) );
+// }
 
 function meal_theme_setup() {
     load_theme_textdomain( 'meal', get_temp_dir() . '/languages' );
@@ -49,24 +49,24 @@ function meal_assets() {
     wp_enqueue_style( 'meal-style-css', get_template_directory_uri() . '/assets/css/style.css', null, '1.0' );
     wp_enqueue_style( 'meal-style', get_stylesheet_uri() );
 
-    wp_enqueue_script( 'popper-js', get_template_directory_uri() . '/assets/js/popper.min.js', ['jquery'], VERSION, true );
-    wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', ['jquery'], VERSION, true );
-    wp_enqueue_script( 'owl.carousel-js', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', ['jquery'], VERSION, true );
-    wp_enqueue_script( 'jquery.waypoints-js', get_template_directory_uri() . '/assets/js/jquery.waypoints.min.js', ['jquery'], VERSION, true );
-    wp_enqueue_script( 'jquery.magnific-popup-js', get_template_directory_uri() . '/assets/js/jquery.magnific-popup.min.js', ['jquery'], VERSION, true );
-    wp_enqueue_script( 'bootstrap-datepicker-js', get_template_directory_uri() . '/assets/js/bootstrap-datepicker.js', ['jquery'], VERSION, true );
-    wp_enqueue_script( 'jquery.timepicker-js', get_template_directory_uri() . '/assets/js/jquery.timepicker.min.js', ['jquery'], VERSION, true );
-    wp_enqueue_script( 'jquery.stellar-js', get_template_directory_uri() . '/assets/js/jquery.stellar.min.js', ['jquery'], VERSION, true );
-    wp_enqueue_script( 'jquery.easing-js', get_template_directory_uri() . '/assets/js/jquery.easing.1.3.js', ['jquery'], VERSION, true );
-    wp_enqueue_script( 'aos.js', get_template_directory_uri() . '/assets/js/aos.js', ['jquery'], VERSION, true );
-    wp_enqueue_script( 'imagesloaded-js', get_template_directory_uri() . '/assets/js/imagesloaded.js', ['jquery'], VERSION, true );
-    wp_enqueue_script( 'isotope-js', get_template_directory_uri() . '/assets/js/isotope.pkgd.min.js', ['jquery'], VERSION, true );
-    wp_enqueue_script( 'google-map-js', '//maps.googleapis.com/maps/api/js?key=AIzaSyAE4H_BppOKzBzXmLfLkGqS0VTjXKZ1ky0', null, VERSION, true );
-    wp_enqueue_script( 'meal-portfolio-js', get_template_directory_uri() . '/assets/js/portfolio.js', ['jquery', 'jquery.magnific-popup-js', 'imagesloaded-js', 'isotope-js'], VERSION, true );
-    wp_enqueue_script( 'meal-main-js', get_template_directory_uri() . '/assets/js/main.js', ['jquery'], VERSION, true );
+    wp_enqueue_script( 'popper-js', get_template_directory_uri() . '/assets/js/popper.min.js', ['jquery'], time(), true );
+    wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', ['jquery'], time(), true );
+    wp_enqueue_script( 'owl.carousel-js', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', ['jquery'], time(), true );
+    wp_enqueue_script( 'jquery.waypoints-js', get_template_directory_uri() . '/assets/js/jquery.waypoints.min.js', ['jquery'], time(), true );
+    wp_enqueue_script( 'jquery.magnific-popup-js', get_template_directory_uri() . '/assets/js/jquery.magnific-popup.min.js', ['jquery'], time(), true );
+    wp_enqueue_script( 'bootstrap-datepicker-js', get_template_directory_uri() . '/assets/js/bootstrap-datepicker.js', ['jquery'], time(), true );
+    wp_enqueue_script( 'jquery.timepicker-js', get_template_directory_uri() . '/assets/js/jquery.timepicker.min.js', ['jquery'], time(), true );
+    wp_enqueue_script( 'jquery.stellar-js', get_template_directory_uri() . '/assets/js/jquery.stellar.min.js', ['jquery'], time(), true );
+    wp_enqueue_script( 'jquery.easing-js', get_template_directory_uri() . '/assets/js/jquery.easing.1.3.js', ['jquery'], time(), true );
+    wp_enqueue_script( 'aos.js', get_template_directory_uri() . '/assets/js/aos.js', ['jquery'], time(), true );
+    wp_enqueue_script( 'imagesloaded-js', get_template_directory_uri() . '/assets/js/imagesloaded.js', ['jquery'], time(), true );
+    wp_enqueue_script( 'isotope-js', get_template_directory_uri() . '/assets/js/isotope.pkgd.min.js', ['jquery'], time(), true );
+    wp_enqueue_script( 'google-map-js', '//maps.googleapis.com/maps/api/js?key=AIzaSyAE4H_BppOKzBzXmLfLkGqS0VTjXKZ1ky0', null, time(), true );
+    wp_enqueue_script( 'meal-portfolio-js', get_template_directory_uri() . '/assets/js/portfolio.js', ['jquery', 'jquery.magnific-popup-js', 'imagesloaded-js', 'isotope-js'], time(), true );
+    wp_enqueue_script( 'meal-main-js', get_template_directory_uri() . '/assets/js/main.js', ['jquery'], time(), true );
 
     if ( is_page_template( 'page-templates/landing.php' ) ) {
-        wp_enqueue_script( 'meal-reservation-js', get_template_directory_uri() . '/assets/js/reservation.js', ['jquery'], VERSION, true );
+        wp_enqueue_script( 'meal-reservation-js', get_template_directory_uri() . '/assets/js/reservation.js', ['jquery'], time(), true );
         $ajaxurl = admin_url( 'admin-ajax.php' );
         wp_localize_script( 'meal-reservation-js', 'mealurl', [ 'ajaxurl' => $ajaxurl ] );
     }
@@ -141,6 +141,9 @@ function meal_process_reservation() {
         } else {
             $wp_error = '';
             $reservation_id = wp_insert_post( $reservation_arguments, $wp_error );
+            
+            
+            if ( ! $wp_error ) {
             $_name = explode(" ", $name);
             $oder_data = array(
                 'first_name' => $_name[0],
@@ -150,9 +153,13 @@ function meal_process_reservation() {
             );
             $order = wc_create_order();
             $order-> set_address($order_data);
-            
-            if ( !$wp_error ) {
-                echo "Successful";
+            $order-> add_product(wc_get_product(936),1);
+            $order->set_customer_note($reservation_id);
+            $order->calculate_totals();
+
+            add_post_meta($reservation_id,'order_id',$order->get_id());
+
+            echo $order->get_checkout_payment_url();
             }
         }
 
@@ -191,3 +198,17 @@ function meal_checkout_fields($fields){
         return $fields;
 }
 add_filter('woocommerce_checkout_fields','meal_checkout_fields');
+
+function meal_order_status_processing($order_id){
+    $order = wc_get_order($order_id);
+    $reservation_id = $order->get_customer_note();
+    if($reservation_id){
+        $reservation = get_post($reservation_id);
+        wp_update_post(array(
+            'ID' => $reservation_id,
+            'post_title' =>"[Paid] - ".$reservation->post_title
+        ));
+        add_post_meta($reservation_id,'paid',1);
+    }
+}
+add_filter( 'woocommerce_order_status_processing','meal_order_status_processing' );
