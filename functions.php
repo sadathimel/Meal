@@ -29,6 +29,11 @@ function meal_theme_setup() {
     add_theme_support( 'custom-logo' );
     add_theme_support( 'automatic-feed-links' );
     add_theme_support( 'html5', ['comment-list', 'comment-form', 'search-form', 'gallery', 'caption'] );
+
+    register_nav_menus(array(
+        'main_menu' => __('Main Menu', 'meal'),
+        'footer_menu' => __('Footer Menu', 'meal'),
+    ) );
 }
 
 add_action( 'after_setup_theme', 'meal_theme_setup' );
